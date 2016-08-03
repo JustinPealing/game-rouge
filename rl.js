@@ -38,7 +38,10 @@ function create() {
 
 function initCell(chr, x, y) {
     // add a single cell in a given position to the ascii display
-    var style = { font: FONT + "px monospace", fill: "#fff" };
+    var style = {
+        font: FONT + "px monospace",
+        fill: "#A23B6C"
+    };
     return game.add.text(FONT * 0.6 * x, FONT * y, chr, style);
 }
 
