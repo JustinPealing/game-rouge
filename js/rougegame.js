@@ -4,25 +4,20 @@ const HEIGHT = 15;
 class RougeGame {
     constructor() {
         this.level = new Level(WIDTH, HEIGHT);
+        this.turn = 1;
     }
 
     init() {
         this.level.init();
     }
 
-    moveLeft() {
-        this.level.player.move(-1, 0);
+    playerMove(dx, dy) {
+        if (this.level.player.hp > 0 && this.level.player.move(dx, dy)) {
+            this.tick();
+        }
     }
 
-    moveRight() {
-        this.level.player.move(1, 0);
-    }
-
-    moveUp() {
-        this.level.player.move(0, -1);
-    }
-
-    moveDown() {
-        this.level.player.move(0, 1);
+    tick() {
+        this.turn++;
     }
 }

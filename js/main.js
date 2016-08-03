@@ -34,21 +34,22 @@ function draw() {
 
     display.putText(0, HEIGHT, new Array(WIDTH + 1).join(' '));
     display.putText(0, HEIGHT, "HP: " + level.player.hp);
+    display.putText(7, HEIGHT, "T: " + game.turn);
 }
 
 function onKeyUp(event) {
     switch (event.keyCode) {
         case Phaser.Keyboard.LEFT:
-            game.moveLeft();
+            game.playerMove(-1, 0);
             break;
         case Phaser.Keyboard.RIGHT:
-            game.moveRight();
+            game.playerMove(1, 0);
             break;
         case Phaser.Keyboard.UP:
-            game.moveUp();
+            game.playerMove(0, -1);
             break;
         case Phaser.Keyboard.DOWN:
-            game.moveDown();
+            game.playerMove(0, 1);
             break;
     }
     draw();

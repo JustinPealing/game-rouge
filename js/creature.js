@@ -10,13 +10,19 @@ class Creature {
     move(dx, dy) {
         let x = this.x + dx;
         let y = this.y + dy;
+        
         var creature = this.level.getCreature(x, y);
         if (creature != null ) {
             this.attack(creature);
-        } else if (this.level.getTile(x, y) == '.') {
+            return true;
+        }
+
+        if (this.level.getTile(x, y) == '.') {
             this.x = x;
             this.y = y;
+            return true;
         }
+        return false;
     }
 
     attack(creature) {
