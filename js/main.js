@@ -17,37 +17,20 @@ function create() {
     level = new Level(WIDTH, HEIGHT);
     level.init();
     
-    initDisplay(WIDTH, HEIGHT);
+    display = new Display(game, WIDTH, HEIGHT, FONT);
     draw();
-}
-
-function initDisplay(width, height) {
-    display = newMatrix(width, height);
-    for (var x = 0; x < width; x++) {
-        for (var y = 0; y < height; y++) {
-            display[x][y] = createCell(x, y); 
-        }
-    }
-}
-
-function createCell(x, y) {
-    var style = {
-        font: FONT + "px monospace",
-        fill: "#A23B6C"
-    };
-    return game.add.text(FONT * 0.6 * x, FONT * y, '', style);
 }
 
 function draw() {
     for (var x = 0; x < level.width; x++) {
         for (var y = 0; y < level.height; y++) {
-            display[x][y].text = level.map[x][y];
+            display.set(x, y, level.map[x][y]);
         }
     }
 
     for (actor of level.creatures) {
         if (actor.hp > 0) {
-            display[actor.x][actor.y].text = actor.char;
+            display.set(actor.x, actor.y, actor.char);
         }
     }
 }
