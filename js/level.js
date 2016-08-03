@@ -2,7 +2,7 @@ class Level {
     constructor(width, height) {
         this.creatures = [];
         this.player = null;
-        this.map = newMatrix(width, height);
+        this.map = matrix(width, height);
         this.width = width;
         this.height = height;
     }
@@ -15,8 +15,8 @@ class Level {
         }
 
         for (let i = 0; i < 10; i++) {
-            let x = getRandomInt(0, this.width - 1);
-            let y = getRandomInt(0, this.height - 1);
+            let x = randomInt(0, this.width - 1);
+            let y = randomInt(0, this.height - 1);
             this.creatures.push(new Creature(this, 'e', 1, x, y));
         }
 

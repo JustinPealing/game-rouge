@@ -2,7 +2,7 @@ const WIDTH = 40;
 const HEIGHT = 15;
 
 function randomWalk(creature) {
-    creature.move(getRandomInt(-1, 1), getRandomInt(-1, 1));
+    creature.move(randomInt(-1, 1), randomInt(-1, 1));
 }
 
 class RougeGame {

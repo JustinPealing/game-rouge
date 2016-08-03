@@ -3,7 +3,7 @@ class Display {
         this.game = game;
         this.font = font;
 
-        this.cells = newMatrix(width, height);
+        this.cells = matrix(width, height);
         for (var x = 0; x < width; x++) {
             for (var y = 0; y < height; y++) {
                 this.cells[x][y] = this.createCell(x, y); 
