@@ -1,4 +1,3 @@
- font size
 var FONT = 32;
 
 // map dimensions
