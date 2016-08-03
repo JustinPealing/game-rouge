@@ -11,12 +11,6 @@ class Creature {
         let x = this.x + dx;
         let y = this.y + dy;
         
-        var creature = this.level.getCreature(x, y);
-        if (creature != null ) {
-            this.attack(creature);
-            return true;
-        }
-
         if (this.level.getTile(x, y) == '.') {
             this.x = x;
             this.y = y;

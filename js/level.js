@@ -15,8 +15,8 @@ class Level {
         }
 
         for (let i = 0; i < 10; i++) {
-            let x = getRandomInt(0, this.width);
-            let y = getRandomInt(0, this.height);
+            let x = getRandomInt(0, this.width - 1);
+            let y = getRandomInt(0, this.height - 1);
             this.creatures.push(new Creature(this, 'e', 1, x, y));
         }
 
