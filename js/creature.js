@@ -8,15 +8,20 @@ class Creature {
     }
 
     move(dx, dy) {
-        let x = this.x + dx;
-        let y = this.y + dy;
-        
-        if (this.level.getTile(x, y) == '.') {
-            this.x = x;
-            this.y = y;
+        if (this.canMove(dx, dy)) {
+            this.x += dx;
+            this.y += dy;
             return true;
         }
         return false;
+    }
+
+    canMove(dx, dy) {
+        let x = this.x + dx;
+        let y = this.y + dy;
+        
+        return this.level.getTile(x, y) == '.'
+            && this.level.getCreature(x, y) == null;
     }
 
     attack(creature) {
