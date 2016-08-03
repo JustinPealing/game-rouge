@@ -1,25 +1,25 @@
 const FONT = 32;
-const WIDTH = 40;
-const HEIGHT = 15;
 
 var display;
-var level;
+var game;
 
-var game = new Phaser.Game(WIDTH * FONT * 0.6, (HEIGHT + 1) * FONT, Phaser.AUTO, null, {
+var phaser = new Phaser.Game(WIDTH * FONT * 0.6, (HEIGHT + 1) * FONT, Phaser.AUTO, null, {
     create: create
 });
 
 function create() {
-    game.input.keyboard.addCallbacks(null, null, onKeyUp);
+    phaser.input.keyboard.addCallbacks(null, null, onKeyUp);
 
-    level = new Level(WIDTH, HEIGHT);
-    level.init();
+    game = new RougeGame();
+    game.init();
     
-    display = new Display(game, WIDTH, HEIGHT + 1, FONT);
+    display = new Display(phaser, WIDTH, HEIGHT + 1, FONT);
     draw();
 }
 
 function draw() {
+    let level = game.level;
+
     for (var x = 0; x < level.width; x++) {
         for (var y = 0; y < level.height; y++) {
             display.set(x, y, level.map[x][y]);
@@ -39,16 +39,16 @@ function draw() {
 function onKeyUp(event) {
     switch (event.keyCode) {
         case Phaser.Keyboard.LEFT:
-            level.player.move(-1, 0);
+            game.moveLeft();
             break;
         case Phaser.Keyboard.RIGHT:
-            level.player.move(1, 0);
+            game.moveRight();
             break;
         case Phaser.Keyboard.UP:
-            level.player.move(0, -1);
+            game.moveUp();
             break;
         case Phaser.Keyboard.DOWN:
-            level.player.move(0, 1);
+            game.moveDown();
             break;
     }
     draw();
