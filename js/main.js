@@ -5,7 +5,7 @@ const HEIGHT = 15;
 var display;
 var level;
 
-var game = new Phaser.Game(WIDTH * FONT * 0.6, HEIGHT * FONT, Phaser.AUTO, null, {
+var game = new Phaser.Game(WIDTH * FONT * 0.6, (HEIGHT + 1) * FONT, Phaser.AUTO, null, {
     create: create
 });
 
@@ -15,7 +15,7 @@ function create() {
     level = new Level(WIDTH, HEIGHT);
     level.init();
     
-    display = new Display(game, WIDTH, HEIGHT, FONT);
+    display = new Display(game, WIDTH, HEIGHT + 1, FONT);
     draw();
 }
 
@@ -31,6 +31,9 @@ function draw() {
             display.set(actor.x, actor.y, actor.char);
         }
     }
+
+    display.putText(0, HEIGHT, new Array(WIDTH + 1).join(' '));
+    display.putText(0, HEIGHT, "HP: " + level.player.hp);
 }
 
 function onKeyUp(event) {

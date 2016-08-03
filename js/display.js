@@ -22,4 +22,10 @@ class Display {
         };
         return this.game.add.text(this.font * 0.6 * x, this.font * y, '', style);
     }
+
+    putText(x, y, text) {
+        for (let i = 0; i < text.length; i++) {
+            this.set(x + i, y, text[i])
+        }
+    }
 }
