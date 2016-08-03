@@ -45,7 +45,7 @@ function draw() {
         }
     }
 
-    for (actor of level.actors) {
+    for (actor of level.creatures) {
         if (actor.hp > 0) {
             display[actor.x][actor.y].text = actor.char;
         }
