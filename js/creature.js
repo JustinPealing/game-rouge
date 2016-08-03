@@ -10,9 +10,24 @@ class Creature {
     move(dx, dy) {
         let x = this.x + dx;
         let y = this.y + dy;
-        if (this.level.getTile(x, y) == '.' && this.level.getCreature(x, y) == null) {
+        var creature = this.level.getCreature(x, y);
+        if (creature != null ) {
+            this.attack(creature);
+        } else if (this.level.getTile(x, y) == '.') {
             this.x = x;
             this.y = y;
+        }
+    }
+
+    attack(creature) {
+        creature.damage(3);
+        this.damage(3);
+    }
+
+    damage(d) {
+        this.hp -= d;
+        if (this.hp <= 0) {
+            this.level.removeCreature(this);
         }
     }
 }

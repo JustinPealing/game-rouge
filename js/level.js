@@ -51,4 +51,8 @@ class Level {
         }
         return null;
     }
+
+    removeCreature(creature) {
+        this.creatures.splice(this.creatures.indexOf(creature) , 1);
+    }
 }
