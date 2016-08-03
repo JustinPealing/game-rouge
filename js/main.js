@@ -2,11 +2,9 @@ const FONT = 32;
 const WIDTH = 40;
 const HEIGHT = 15;
 
-// the ascii display, as a 2d array of characters
 var display;
 var level;
 
-// initialize phaser, call create() once done
 var game = new Phaser.Game(WIDTH * FONT * 0.6, HEIGHT * FONT, Phaser.AUTO, null, {
     create: create
 });
