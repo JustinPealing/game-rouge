@@ -42,4 +42,13 @@ class Level {
         }
         return this.map[x][y];
     }
+
+    getCreature(x, y) {
+        for (let c of this.actors) {
+            if (c.x == x && c.y == y) {
+                return c;
+            }
+        }
+        return null;
+    }
 }
