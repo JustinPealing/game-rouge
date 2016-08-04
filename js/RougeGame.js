@@ -6,7 +6,8 @@ function randomWalk(creature) {
 }
 
 class RougeGame {
-    constructor() {
+    constructor(items) {
+        this.items = items;
         this.level = new Level(WIDTH, HEIGHT);
         this.turn = 1;
         this.player = null;
@@ -14,7 +15,21 @@ class RougeGame {
 
     init() {
         this.level.init();
+        this.generateItems();
         this.player = this.level.player;
+    }
+
+    generateItems() {
+        for (let i = 0; i < 10; i++) {
+            let x = randomInt(0, this.level.width - 1);
+            let y = randomInt(0, this.level.height - 1);
+            let i = randomInt(0, this.items.length - 1);
+
+            let tile = this.level.getTile(x, y);
+            if (tile.char == '.') { 
+                tile.items.push(new Item('i', this.items[i]));
+            }
+        }
     }
 
     playerMove(dx, dy) {

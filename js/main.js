@@ -5,13 +5,19 @@ let game;
 let inventoryMenu = null;
 
 let phaser = new Phaser.Game(WIDTH * FONT * 0.6, (HEIGHT + 1) * FONT, Phaser.AUTO, null, {
+    preload: preload,
     create: create
 });
+
+function preload() {
+    phaser.load.text("items", "/data/items.txt");
+}
 
 function create() {
     phaser.input.keyboard.addCallbacks(null, null, onKeyUp);
 
-    game = new RougeGame();
+    let items = phaser.cache.getText("items").match(/[^\r\n]+/g);
+    game = new RougeGame(items);
     game.init();
     
     display = new Display(phaser, WIDTH, HEIGHT + 1, FONT);

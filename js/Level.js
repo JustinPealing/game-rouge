@@ -24,15 +24,6 @@ class Level {
             this.creatures.push(new Creature(this, 'e', 1, x, y));
         }
 
-        for (let i = 0; i < 10; i++) {
-            let x = randomInt(0, this.width - 1);
-            let y = randomInt(0, this.height - 1);
-            let tile = this.getTile(x, y);
-            if (tile.char == '.') { 
-                tile.items.push(new Item('i', "Test item"));
-            }
-        }
-
         this.player = new Creature(this, '@', 10, 0, 0);
         this.creatures.push(this.player);
     }
