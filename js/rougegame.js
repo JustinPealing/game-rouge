@@ -31,6 +31,10 @@ class RougeGame {
             this.tick();
         } else {
             if (this.player.move(dx, dy)) {
+                let tile = this.level.getTile(this.player.x, this.player.y);
+                for (var item of tile.items) {
+                    this.player.pickUp(item);
+                }
                 this.tick();
             }
         }

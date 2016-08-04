@@ -5,6 +5,7 @@ class Creature {
         this.hp = hp;
         this.x = x;
         this.y = y;
+        this.items = [];
     }
 
     move(dx, dy) {
@@ -20,7 +21,9 @@ class Creature {
         let x = this.x + dx;
         let y = this.y + dy;
         
-        return this.level.getTile(x, y) == '.'
+        let tile = this.level.getTile(x, y); 
+        return tile != null
+            && tile.char == '.'
             && this.level.getCreature(x, y) == null;
     }
 
@@ -34,5 +37,11 @@ class Creature {
         if (this.hp <= 0) {
             this.level.removeCreature(this);
         }
+    }
+
+    pickUp(item) {
+        let tile = this.level.getTile(this.x, this.y);
+        tile.items.splice(tile.items.indexOf(item), 1);
+        this.items.push(item);
     }
 }
