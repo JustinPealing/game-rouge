@@ -4,8 +4,8 @@ class Display {
         this.font = font;
 
         this.cells = matrix(width, height);
-        for (var x = 0; x < width; x++) {
-            for (var y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            for (let y = 0; y < height; y++) {
                 this.cells[x][y] = this.createCell(x, y); 
             }
         }
@@ -16,7 +16,7 @@ class Display {
     }
 
     createCell(x, y) {
-        var style = {
+        let style = {
             font: this.font + "px monospace",
             fill: "#A23B6C"
         };

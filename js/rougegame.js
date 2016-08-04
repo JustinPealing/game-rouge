@@ -25,14 +25,14 @@ class RougeGame {
         let x = this.player.x + dx;
         let y = this.player.y + dy;
         
-        var creature = this.level.getCreature(x, y);
+        let creature = this.level.getCreature(x, y);
         if (creature != null) {
             this.player.attack(creature);
             this.tick();
         } else {
             if (this.player.move(dx, dy)) {
                 let tile = this.level.getTile(this.player.x, this.player.y);
-                for (var item of tile.items) {
+                for (let item of tile.items) {
                     this.player.pickUp(item);
                 }
                 this.tick();

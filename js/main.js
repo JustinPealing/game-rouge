@@ -1,10 +1,10 @@
 const FONT = 32;
 
-var display;
-var game;
-var showInventory = false;
+let display;
+let game;
+let showInventory = false;
 
-var phaser = new Phaser.Game(WIDTH * FONT * 0.6, (HEIGHT + 1) * FONT, Phaser.AUTO, null, {
+let phaser = new Phaser.Game(WIDTH * FONT * 0.6, (HEIGHT + 1) * FONT, Phaser.AUTO, null, {
     create: create
 });
 
@@ -21,8 +21,8 @@ function create() {
 function draw() {
     let level = game.level;
 
-    for (var x = 0; x < level.width; x++) {
-        for (var y = 0; y < level.height; y++) {
+    for (let x = 0; x < level.width; x++) {
+        for (let y = 0; y < level.height; y++) {
             let tile = level.getTile(x, y);
             if (tile.items.length == 0) {
                 display.set(x, y, tile.char);

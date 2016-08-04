@@ -1,6 +1,6 @@
 function matrix(x, y) {
-    var a = new Array(x);
-    for (var i = 0; i < x; i++) {
+    let a = new Array(x);
+    for (let i = 0; i < x; i++) {
         a[i] = new Array(y);
     }
     return a;
