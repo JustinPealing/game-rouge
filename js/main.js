@@ -44,16 +44,16 @@ function draw() {
 
 function onKeyUp(event) {
     switch (event.keyCode) {
-        case Phaser.Keyboard.LEFT:
+        case Phaser.KeyCode.LEFT:
             game.playerMove(-1, 0);
             break;
-        case Phaser.Keyboard.RIGHT:
+        case Phaser.KeyCode.RIGHT:
             game.playerMove(1, 0);
             break;
-        case Phaser.Keyboard.UP:
+        case Phaser.KeyCode.UP:
             game.playerMove(0, -1);
             break;
-        case Phaser.Keyboard.DOWN:
+        case Phaser.KeyCode.DOWN:
             game.playerMove(0, 1);
             break;
     }
