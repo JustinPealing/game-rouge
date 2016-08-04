@@ -27,7 +27,10 @@ class Level {
         for (let i = 0; i < 10; i++) {
             let x = randomInt(0, this.width - 1);
             let y = randomInt(0, this.height - 1);
-            this.getTile(x, y).items.push(new Item('i'));
+            let tile = this.getTile(x, y);
+            if (tile.char == '.') { 
+                tile.items.push(new Item('i'));
+            }
         }
 
         this.player = new Creature(this, '@', 10, 0, 0);
