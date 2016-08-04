@@ -29,7 +29,7 @@ class Level {
             let y = randomInt(0, this.height - 1);
             let tile = this.getTile(x, y);
             if (tile.char == '.') { 
-                tile.items.push(new Item('i'));
+                tile.items.push(new Item('i', "Test item"));
             }
         }
 

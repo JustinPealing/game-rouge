@@ -1,5 +1,6 @@
 class Item {
-    constructor(char) {
+    constructor(char, name) {
         this.char = char;
+        this.name = name;
     }
 }

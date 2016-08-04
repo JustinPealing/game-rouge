@@ -22,8 +22,12 @@ class Menu {
 
     draw() {
         if (this.visible) {
-            drawBox(this.display, this.title, 1, 1, this.width, this.height);
+            this.onDraw();
         }
+    }
+
+    onDraw() {
+        drawBox(this.display, this.title, 1, 1, this.width, this.height);
     }
 
     show() {
