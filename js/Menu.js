@@ -1,23 +1,9 @@
-function drawBox(display, x1, y1, x2, y2) {
-    for (let x = x1; x < x2 + 1; x++) {
-        for (let y = y1; y < y2 + 1; y++) {
-            if (x == x1 && y == y1) {
-                display.putText(x, y, '\u2554');
-            } else if (x == x2 && y == y1) {
-                display.putText(x, y, '\u2557');
-            } else if (x == x1 && y == y2) {
-                display.putText(x, y, '\u255A');
-            } else if (x == x2 && y == y2) {
-                display.putText(x, y, '\u255D');
-            } else if (x == x1 || x == x2) {
-                display.putText(x, y, '\u2551');
-            } else if (y == y1 || y == y2) {
-                display.putText(x, y, '\u2550');
-            } else {
-                display.putText(x, y, ' ');
-            }
-        }
+function drawBox(display, x, y, width, height) {
+    display.putText(x, y, "\u2554" + Array(width - 1).join('\u2550') + "\u2557");
+    for (let i = 1; i < height - 1; i++) {
+        display.putText(x, y + i, "\u2551" + Array(width - 1).join(' ') + "\u2551");
     }
+    display.putText(x, y + height - 1, "\u255A" + Array(width - 1).join('\u2550') + "\u255D");
 }
 
 class Menu {
