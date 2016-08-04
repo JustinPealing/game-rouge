@@ -1,5 +1,8 @@
-function drawBox(display, x, y, width, height) {
+function drawBox(display, title, x, y, width, height) {
     display.putText(x, y, "\u2554" + Array(width - 1).join('\u2550') + "\u2557");
+    if (title != null) {
+        display.putText(x + 2, y, " " + title + " ");
+    }
     for (let i = 1; i < height - 1; i++) {
         display.putText(x, y + i, "\u2551" + Array(width - 1).join(' ') + "\u2551");
     }
@@ -7,8 +10,9 @@ function drawBox(display, x, y, width, height) {
 }
 
 class Menu {
-    constructor(display, x, y, width, height) {
+    constructor(display, title, x, y, width, height) {
         this.display = display;
+        this.title = title;
         this.x = x;
         this.y = y;
         this.width = width;
@@ -18,7 +22,7 @@ class Menu {
 
     draw() {
         if (this.visible) {
-            drawBox(this.display, 1, 1, this.width, this.height);
+            drawBox(this.display, this.title, 1, 1, this.width, this.height);
         }
     }
 

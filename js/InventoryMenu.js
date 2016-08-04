@@ -1,6 +1,6 @@
 class InventoryMenu extends Menu {
     constructor(game, display) {
-        super(display, 1, 1, display.width - 2, display.height - 3);
+        super(display, "Inventory", 1, 1, display.width - 2, display.height - 3);
         this.game = game;
     }
 
