@@ -2,6 +2,8 @@ class Display {
     constructor(game, width, height, font) {
         this.game = game;
         this.font = font;
+        this.width = width;
+        this.height = height;
 
         this.cells = matrix(width, height);
         for (let x = 0; x < width; x++) {
