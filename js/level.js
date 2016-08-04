@@ -10,7 +10,10 @@ class Level {
     init() {
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
-                this.map[x][y] = Math.random() > 0.8 ? '#' : '.';
+                let char = Math.random() > 0.8 ? '#' : '.';
+                this.map[x][y] = {
+                    char: char
+                };
             }
         }
 

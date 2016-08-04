@@ -22,7 +22,7 @@ function draw() {
 
     for (var x = 0; x < level.width; x++) {
         for (var y = 0; y < level.height; y++) {
-            display.set(x, y, level.map[x][y]);
+            display.set(x, y, level.getTile(x, y).char);
         }
     }
 

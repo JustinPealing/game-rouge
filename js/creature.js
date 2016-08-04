@@ -20,7 +20,9 @@ class Creature {
         let x = this.x + dx;
         let y = this.y + dy;
         
-        return this.level.getTile(x, y) == '.'
+        let tile = this.level.getTile(x, y); 
+        return tile != null
+            && tile.char == '.'
             && this.level.getCreature(x, y) == null;
     }
 
