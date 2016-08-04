@@ -12,7 +12,8 @@ class Level {
             for (let y = 0; y < this.height; y++) {
                 let char = Math.random() > 0.8 ? '#' : '.';
                 this.map[x][y] = {
-                    char: char
+                    char: char,
+                    items: []
                 };
             }
         }
@@ -21,6 +22,12 @@ class Level {
             let x = randomInt(0, this.width - 1);
             let y = randomInt(0, this.height - 1);
             this.creatures.push(new Creature(this, 'e', 1, x, y));
+        }
+
+        for (let i = 0; i < 10; i++) {
+            let x = randomInt(0, this.width - 1);
+            let y = randomInt(0, this.height - 1);
+            this.getTile(x, y).items.push(new Item('i'));
         }
 
         this.player = new Creature(this, '@', 10, 0, 0);
