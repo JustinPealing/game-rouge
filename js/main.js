@@ -1,4 +1,4 @@
-const FONT = 32;
+const FONT = 20;
 
 let display;
 let game;

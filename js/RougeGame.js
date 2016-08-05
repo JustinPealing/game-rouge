@@ -1,5 +1,5 @@
-const WIDTH = 40;
-const HEIGHT = 15;
+const WIDTH = 80;
+const HEIGHT = 30;
 
 function randomWalk(creature) {
     creature.move(randomInt(-1, 1), randomInt(-1, 1));
