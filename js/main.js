@@ -1,3 +1,7 @@
+import {RougeGame, WIDTH, HEIGHT} from "./RougeGame.js";
+import Display from "./Display.js";
+import InventoryMenu from "./InventoryMenu.js";
+
 const FONT = 32;
 
 let display;
@@ -41,7 +45,7 @@ function draw() {
         }
     }
 
-    for (actor of level.creatures) {
+    for (let actor of level.creatures) {
         if (actor.hp > 0) {
             display.set(actor.x, actor.y, actor.char);
         }

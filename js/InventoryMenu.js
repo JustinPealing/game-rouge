@@ -1,4 +1,6 @@
-class InventoryMenu extends Menu {
+import Menu from "./Menu.js";
+
+export default class InventoryMenu extends Menu {
     constructor(game, display) {
         super(display, "Inventory", 1, 1, display.width - 2, display.height - 3);
         this.game = game;

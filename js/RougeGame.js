@@ -1,11 +1,15 @@
-const WIDTH = 40;
-const HEIGHT = 15;
+import Level from "./Level.js";
+import Item from "./Item.js";
+import {randomInt} from "./utils.js";
+
+export const WIDTH = 40;
+export const HEIGHT = 15;
 
 function randomWalk(creature) {
     creature.move(randomInt(-1, 1), randomInt(-1, 1));
 }
 
-class RougeGame {
+export class RougeGame {
     constructor(items) {
         this.items = items;
         this.level = new Level(WIDTH, HEIGHT);

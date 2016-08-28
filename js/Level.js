@@ -1,4 +1,7 @@
-class Level {
+import {matrix, randomInt} from "./utils.js";
+import Creature from "./Creature.js";
+
+export default class Level {
     constructor(width, height) {
         this.creatures = [];
         this.player = null;

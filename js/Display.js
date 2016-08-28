@@ -1,4 +1,6 @@
-class Display {
+import {matrix} from "./utils.js";
+
+export default class Display {
     constructor(game, width, height, font) {
         this.game = game;
         this.font = font;

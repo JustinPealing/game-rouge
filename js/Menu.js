@@ -9,7 +9,7 @@ function drawBox(display, title, x, y, width, height) {
     display.putText(x, y + height - 1, "\u255A" + Array(width - 1).join('\u2550') + "\u255D");
 }
 
-class Menu {
+export default class Menu {
     constructor(display, title, x, y, width, height) {
         this.display = display;
         this.title = title;

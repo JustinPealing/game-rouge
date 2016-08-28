@@ -1,4 +1,4 @@
-class Creature {
+export default class Creature {
     constructor(level, char, hp, x, y) {
         this.level = level;
         this.char = char;
