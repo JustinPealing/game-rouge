@@ -2,7 +2,7 @@ import {RougeGame, WIDTH, HEIGHT} from "./RougeGame.js";
 import Display from "./Display.js";
 import InventoryMenu from "./InventoryMenu.js";
 
-const FONT = 32;
+const FONT = 20;
 
 let display;
 let game;
