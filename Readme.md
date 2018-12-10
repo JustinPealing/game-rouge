@@ -1,5 +1,8 @@
-Dependencies
----
+# game-rouge
+
+A really simple roguelike game I started to learn [Phaser](https://phaser.io/).
+
+## Dependencies
 
     -- Webpack
     npm install webpack -g
@@ -7,8 +10,7 @@ Dependencies
     -- A web server, e.g.
     npm install http-server -g
 
-How to run
----
+## How to run
 
     -- Webpack
     webpack --watch &
